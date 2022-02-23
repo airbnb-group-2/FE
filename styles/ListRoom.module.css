@@ -1,0 +1,22 @@
+.separator {
+  width: 670px;
+  height: 1px;
+  background-color: #0000007a;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.miniSeparator {
+  width: 150px;
+  height: 1px;
+  background-color: #0000002d;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.imageCard {
+  width: 330px;
+  height: 215px;
+}
+.facilities {
+  max-width: 300px;
+  color: #3d3d3d93;
+}
