@@ -33,7 +33,7 @@ function Footer() {
                 <a href="">About</a>
               </h3>
               <h3 className="mx-3 text-2xl">
-                <a href="">Community</a>
+                <a href="">Community </a>
               </h3>
               <h3 className="mx-3 text-2xl">
                 <a href="">Help</a>
