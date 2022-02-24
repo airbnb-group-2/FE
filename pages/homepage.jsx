@@ -15,7 +15,7 @@ function Home() {
             <Image src={mainImg} alt="home-image" className="relative"/>
             <div className="grid grid-co-3">
                 <button className="absolute left-[9.5vw] top-[29vw] h-[5vw] w-[29vw] bg-[#7F6F62] hover:bg-white  text-white font-semibold hover:text-black py-2 px-4 border border-black hover:border-[#7F6F62] rounded-xl">
-                    <p className="italic text-ellipsis overflow-hidden ...">
+                    <p className="italic lg:text-[14px] md:text-[7px] sm:text-[3px]">
                         BOOK A ROOM NOW
                     </p>
                 </button>
