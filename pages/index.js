@@ -4,6 +4,6 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <h1> Semangat Gan !</h1>
+    <h1 className='text-blue-700'> Semangat Gan !</h1>
   )
 }
