@@ -2,13 +2,16 @@ import React from "react";
 import styles from "../../styles/ListRoom.module.css";
 import ReactStars from "react-rating-stars-component";
 import { FaMoneyBillAlt } from "react-icons/fa";
-import Mymap from "../map";
+import Mymap from "../../components/Map";
+import { useRouter } from "next/router";
 
 function Listroom() {
+  const router = useRouter();
   const data = [
     {
       name: "Deluxe Room Joglo",
       id: 1,
+      value: 3,
       facilities:
         "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
       price: "350.000",
@@ -17,6 +20,7 @@ function Listroom() {
     {
       name: "Deluxe Room Limasan",
       id: 2,
+      value: 4,
       facilities:
         "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
       price: "280.000",
@@ -25,6 +29,7 @@ function Listroom() {
     {
       name: "Deluxe Room Tugu",
       id: 3,
+      value: 5,
       facilities:
         "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
       price: "420.000",
@@ -33,6 +38,7 @@ function Listroom() {
     {
       name: "Deluxe Room Prambanan",
       id: 4,
+      value: 2,
       facilities:
         "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
       price: "350.000",
@@ -40,44 +46,53 @@ function Listroom() {
     },
   ];
   console.log(data);
+
   const mystar = {
     size: 30,
     value: 4,
     edit: false,
   };
+
   return (
     <div className=" flex pl-8 container">
       {/* Section Left */}
       <div className=" w-1/2">
-        <p className=" text-4xl font-bold mt-3">Stays :</p>
+        <p className=" text-4xl font-bold mt-3 mb-1">Special For You :</p>
 
         {/* Card */}
-        {data.map((el, i) => (
-          <div key={i}>
-            <div className={styles.separator}></div>
-            <div className=" flex">
-              <div className=" w-1/2">
-                <img
-                  className={` rounded-xl drop-shadow-xl ${styles.imageCard}`}
-                  src={el.img}
-                  alt=""
-                />
-              </div>
-              <div className=" w-1/2">
-                <p className=" text-2xl font-bold mt-4">{el.name}</p>
-                <div className={styles.miniSeparator}></div>
-                <p className={styles.facilities}>{el.facilities}</p>
-                <ReactStars {...mystar} />
-                <div className="flex">
-                  <p className=" text-4xl text-green-700">
-                    <FaMoneyBillAlt />
+        <div className={styles.overflow}>
+          {data.map((el, i) => (
+            <div
+              onClick={() => router.push(`/detail/${el.id}`)}
+              className=" mb-7"
+              key={i}
+            >
+              <div className={styles.separator}></div>
+              <div className=" flex">
+                <div className=" w-1/2">
+                  <img
+                    className={` rounded-xl drop-shadow-xl ${styles.imageCard}`}
+                    src={el.img}
+                  />
+                </div>
+                <div className=" w-1/2">
+                  <p className=" cursor-pointer text-2xl font-bold mt-4">
+                    {el.name}
                   </p>
-                  <p className="ml-2 text-2xl"> Rp. {el.price}</p>
+                  <div className={styles.miniSeparator}></div>
+                  <p className={styles.facilities}>{el.facilities}</p>
+                  <ReactStars {...mystar} value={el.value} />
+                  <div className="flex">
+                    <p className=" text-4xl text-green-700">
+                      <FaMoneyBillAlt />
+                    </p>
+                    <p className="ml-2 text-2xl"> Rp. {el.price}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Section Right */}

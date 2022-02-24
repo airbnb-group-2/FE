@@ -2,7 +2,7 @@
   width: 670px;
   height: 1px;
   background-color: #0000007a;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 25px;
 }
 .miniSeparator {
@@ -15,8 +15,18 @@
 .imageCard {
   width: 330px;
   height: 215px;
+  cursor: pointer;
 }
 .facilities {
   max-width: 300px;
   color: #3d3d3d93;
+}
+.overflow {
+  overflow-y: scroll;
+  height: 90vh;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 30px;
+  height: 20px;
 }
