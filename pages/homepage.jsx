@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import mainImg from "../asset/HOME.png";
+import mainImg from "../assets/HOME.png";
 import Homecard from "../components/homecard"
 import NumberFormat from "react-number-format";
 import ReactLoading from "react-loading";
@@ -13,21 +13,59 @@ function Home() {
     <section>
         <div className="grid grid-cols-1">
             <Image src={mainImg} alt="home-image" className="relative"/>
-            <div className="mt-[-100px]">
-                <button className="absolute left-5  h-16 w-32 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Button
+            <div className="grid grid-co-3">
+                <button className="absolute left-[9.5vw] top-[29vw] h-[5vw] w-[29vw] bg-[#7F6F62] hover:bg-white  text-white font-semibold hover:text-black py-2 px-4 border border-black hover:border-[#7F6F62] rounded-xl">
+                    <p className="italic text-ellipsis overflow-hidden ...">
+                        BOOK A ROOM NOW
+                    </p>
                 </button>
             </div>
         </div>
-        <div className="grid grid-cols-1">
-            <Homecard />
-        </div>
-        <div className="grid grid-cols-1">
-            article
-        </div>
-        <div className="grid grid-cols-1">
-            Mr.cat
-        </div>
+        <div>
+            <p>
+                test
+            </p>
+            <div className="mt-[5vw] ml-[5vw] mr-[5vw] grid grid-cols-4">
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+            </div>
+        </div>    
+        <div>
+            <p>
+                test
+            </p>
+            <div className="mt-[5vw] ml-[5vw] mr-[5vw] grid grid-cols-2">
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+            </div>
+        </div>  
+        <div>
+            <p>
+                test
+            </p>
+            <div className="mt-[5vw] ml-[5vw] mr-[5vw] grid grid-cols-2">
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    CAT PICTURE
+                </div>
+                <div className="ml-[2vw] mr-[2vw] grid grid-cols-1">
+                    <Homecard />
+                </div>
+            </div>
+        </div>  
     </section>
  );
 }
