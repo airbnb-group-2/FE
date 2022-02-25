@@ -8,7 +8,7 @@ import {
   FaTelegramPlane,
   FaWhatsapp,
 } from "react-icons/fa";
-import footerLogo from "../public/footerLogo.png";
+import footerLogo from "../assets/footerLogo.png";
 
 function Footer() {
   return (
