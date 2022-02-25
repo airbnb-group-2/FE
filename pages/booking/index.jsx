@@ -1,18 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/Booking.module.css";
 import { FaCalendarAlt, FaCalendarMinus, FaMoneyBillAlt } from "react-icons/fa";
-import ReactLoading from "react-loading";
 
 function Booking() {
-  const [loading, setLoading] = useState(false);
-  //   useEffect(() => {
-  //     setLoading(true);
-
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 1000);
-  //   }, []);
-
   const data = [
     {
       name: "Deluxe Room Joglo",
@@ -58,28 +48,10 @@ function Booking() {
     },
   ];
 
-  function Loading() {
-    if (loading) {
-      return (
-        <div className=" ">
-          <ReactLoading
-            type={"cylon"}
-            color={"#000000"}
-            height={"10%"}
-            width={"10%"}
-          />
-        </div>
-      );
-    } else {
-      return <></>;
-    }
-  }
-
   return (
     <div className=" flex pl-8 container">
       {/* Section Left */}
       <div className=" w-1/2">
-        {Loading()}
         <p className=" text-4xl font-bold mt-3 mb-1">Histories :</p>
 
         {/* Card */}
