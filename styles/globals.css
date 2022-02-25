@@ -18,3 +18,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+::-webkit-scrollbar-thumb {
+  background: radial-gradient(
+    circle,
+    rgba(94, 203, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: 30px;
+  border: 1px solid #f6f7ed;
+  height: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: radial-gradient(
+    circle,
+    rgb(255, 161, 107) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
