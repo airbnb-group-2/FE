@@ -16,6 +16,12 @@
   width: 330px;
   height: 215px;
   cursor: pointer;
+  transition: 1s;
+}
+.imageCard:hover {
+  width: 380px;
+  height: 265px;
+  cursor: pointer;
 }
 .facilities {
   max-width: 300px;
