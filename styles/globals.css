@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;600;700;800&display=swap');
 
 html,
 body {
@@ -16,5 +17,7 @@ a {
 }
 
 * {
+  transition: all ease 0.3s;
   box-sizing: border-box;
+  font-family: 'Epilogue', sans-serif;
 }
