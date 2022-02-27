@@ -6,8 +6,10 @@ import Star from "../assets/star.png";
 
 function homecard() {
     return (
-        <div className="bg-[#7F6F62] bg-opacity-70 ml-[30px] mr-[30px] mb-[50px] max-w-sm overflow-hidden shadow-black shadow-md hover:shadow-none rounded-2xl ">
-            <Image className="w-full" src={mainImg} alt="kamar"/>
+        <div className="bg-[#7F6F62] bg-opacity-70  mb-[50px] max-w-sm overflow-hidden shadow-black shadow-md hover:shadow-none rounded-2xl ">
+            <div>
+                <Image className="w-full" src={mainImg} alt="kamar" objectFit="cover"/>
+            </div>
             <div class="px-[2vh] py-[2vh]">
                 <div class="font-bold text-lg mb-2">Premium Joglo room</div>
                 <p class="text-gray-900 text-sm mb-1">
