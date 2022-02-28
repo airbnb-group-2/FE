@@ -129,7 +129,7 @@ function Navbar() {
             <p
               className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover: transition duration-100`}
             >
-              <a href="#">Add Rooms</a>
+              <a href="/user/admin">Add Rooms</a>
             </p>
 
             {/* Log Out */}
