@@ -29,7 +29,7 @@ function product() {
 
     return(
 
-        <div className={'mx-[10vh] flex justify-start '+ style.background}>
+        <div className={'mx-[5vh] flex justify-start '+ style.background}>
             <div className='h-4/5'>
                 <Image 
                 src={mainImg}

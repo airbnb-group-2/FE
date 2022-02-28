@@ -30,7 +30,7 @@ function product() {
 
 
     return(
-        <div className={'mx-[5vh] flex justify-end '+ style.background}>
+        <div className={'mx-[3vh] flex justify-end '+ style.background}>
             <div className='h-4/5'>
                 <Image 
                 src={mainImg}
@@ -42,8 +42,91 @@ function product() {
                 />
             </div>
             <div className={style.content + " z-1 w-[50vw] h-[100vh] py-10 flex flex-col justify-between items-center "}>
-                <div className={'drop-shadow '+style.form}>
-                    Test
+                <h2 className="object-left-top text-3xl bold text-black">
+                    Room detail & Reservation
+                </h2>
+                <div className={'max-w-[90vh] max-h-[37.5vh] drop-shadow '+style.form}>
+                    {/* show product */}
+                    {data.map((el, i) => (
+                    <div
+                        onClick={() => router.push(`/detail/${el.id}`)}
+                        className=" mb-7"
+                        key={i}
+                        >
+                        <div className="mt-[-3vh] flex">
+                            <div className=" w-1/2">
+                            <img
+                                className={` ml-[-5vh] mt-[3vh] rounded-xl drop-shadow-xl ${style.imageCard}`}
+                                src={el.img}
+                            />
+                            </div>
+                            <div className=" w-1/2">
+                            <p className=" cursor-pointer text-xl font-bold mt-4">
+                                {el.name}
+                            </p>
+                            <div className={style.miniSeparator}></div>
+                                <p className={style.facilities+'text-xs' }>
+                                    {el.facilities}
+                                </p>
+                                <ReactStars {...mystar} value={el.value} />
+                                <div className="flex">
+                                    <p className=" text-2xl text-green-700">
+                                    <FaMoneyBillAlt />
+                                    </p>
+                                    <p className="ml-2 text-lg"> Rp. {el.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ))}  
+                    {/*show product end*/}
+                </div>
+                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow '+style.form}>
+                    {/* DROPDOWN SECTION */}
+                    {/* check in date*/}
+                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                        Check-in Date
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+                        <ul class="py-1" aria-labelledby="dropdownButton">
+                            <li>
+                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                    isi 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    {/* check in date end*/}
+                    {/* check out date*/}
+                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="ml-[3vh] text-whiteg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                        Check-out Date
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+                        <ul class="py-1" aria-labelledby="dropdownButton">
+                            <li>
+                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                   isi
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    {/* check out date end*/}
+                </div>
+                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow '+style.form}>
+                        <button className='rounded-lg'>
+                            Check Availability
+                        </button>
+                </div>
+                <div>
+                    <h3>© 2022 Beta BnB, Inc. All rights reserved</h3>
                 </div>
             </div>
         </div>
