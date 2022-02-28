@@ -1,8 +1,10 @@
-import { submitRegister, submitLogin } from "./loginRegister"
+import { submitRegister, submitLogin, getUserType } from "./loginRegister"
 
 const allStore = {
     submitRegister,
-    submitLogin
+    submitLogin,
+    getUserType,
+    
 }
 
 export default allStore
