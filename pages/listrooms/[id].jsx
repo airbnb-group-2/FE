@@ -9,8 +9,7 @@ import NumberFormat from "react-number-format";
 
 export default function ListRoom() {
   const router = useRouter();
-  const facilities =
-    "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking";
+
   const [listroom, setListroom] = useState([]);
   const mystar = {
     size: 30,
