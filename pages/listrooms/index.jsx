@@ -1,59 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/ListRoom.module.css";
 import ReactStars from "react-rating-stars-component";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import Mymap from "../../components/Map";
 import { useRouter } from "next/router";
+import axios from "axios";
+import NumberFormat from "react-number-format";
 
-function Listroom() {
+export default function ListRoom() {
   const router = useRouter();
-  const data = [
-    {
-      name: "Deluxe Room Joglo",
-      id: 1,
-      value: 3,
-      facilities:
-        "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
-      price: "350.000",
-      img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      name: "Deluxe Room Limasan",
-      id: 2,
-      value: 4,
-      facilities:
-        "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
-      price: "280.000",
-      img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      name: "Deluxe Room Tugu",
-      id: 3,
-      value: 5,
-      facilities:
-        "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
-      price: "420.000",
-      img: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    },
-    {
-      name: "Deluxe Room Prambanan",
-      id: 4,
-      value: 2,
-      facilities:
-        "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking",
-      price: "350.000",
-      img: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    },
-  ];
 
+  const [listroom, setListroom] = useState([]);
   const mystar = {
     size: 30,
     value: 4,
     edit: false,
   };
 
+  useEffect(() => {
+    axios
+      .get("http://3.1.211.120:8081/rooms/all")
+      .then(({ data }) => {
+        setListroom(data.data);
+        console.log(data.data);
+      })
+      .catch((err) => {
+        console.log(err, "error bang");
+      });
+  }, []);
+
   function randomStart() {
-    return Math.floor(Math.random() * 5) + 2;
+    return Math.floor(Math.random() * 5) + 3;
   }
 
   return (
@@ -64,9 +41,9 @@ function Listroom() {
 
         {/* Card */}
         <div className={styles.overflow}>
-          {data.map((el, i) => (
+          {listroom.map((el, i) => (
             <div
-              onClick={() => router.push(`/detail/${el.id}`)}
+              onClick={() => router.push(`/rooms/${el.id}`)}
               className=" mb-7"
               key={i}
             >
@@ -75,7 +52,7 @@ function Listroom() {
                 <div className=" w-1/2">
                   <img
                     className={` rounded-xl drop-shadow-xl ${styles.imageCard}`}
-                    src={el.img}
+                    src={el.description}
                   />
                 </div>
                 <div className=" w-1/2">
@@ -83,13 +60,22 @@ function Listroom() {
                     {el.name}
                   </p>
                   <div className={styles.miniSeparator}></div>
-                  <p className={styles.facilities}>{el.facilities}</p>
+                  <p
+                    className={styles.facilities}
+                  >{`${el.guest} Guest - ${el.bedroom} Bedroom - 2 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking`}</p>
                   <ReactStars {...mystar} value={randomStart()} />
                   <div className="flex">
                     <p className=" text-4xl text-green-700">
                       <FaMoneyBillAlt />
                     </p>
-                    <p className="ml-2 text-2xl"> Rp. {el.price}</p>
+                    <p className="ml-2 text-2xl">
+                      Rp.{" "}
+                      <NumberFormat
+                        value={el.price}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                      />
+                    </p>
                   </div>
                 </div>
               </div>
@@ -107,5 +93,3 @@ function Listroom() {
     </div>
   );
 }
-
-export default Listroom;
