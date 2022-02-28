@@ -45,13 +45,16 @@ function Listroom() {
       img: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     },
   ];
-  console.log(data);
 
   const mystar = {
     size: 30,
     value: 4,
     edit: false,
   };
+
+  function randomStart() {
+    return Math.floor(Math.random() * 5) + 2;
+  }
 
   return (
     <div className=" flex pl-8 container">
@@ -81,7 +84,7 @@ function Listroom() {
                   </p>
                   <div className={styles.miniSeparator}></div>
                   <p className={styles.facilities}>{el.facilities}</p>
-                  <ReactStars {...mystar} value={el.value} />
+                  <ReactStars {...mystar} value={randomStart()} />
                   <div className="flex">
                     <p className=" text-4xl text-green-700">
                       <FaMoneyBillAlt />
