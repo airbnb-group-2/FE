@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   function ReturnNavbar() {
     const router = useRouter();
     const { asPath } = router;
-    if (asPath === "/user/login" || asPath === "/user/create") {
+    if (asPath === "/user/login" || asPath === "/user/register") {
       return <></>;
     } else {
       return <Navbar />;
@@ -16,7 +16,9 @@ export default function Layout({ children }) {
   function returnFooter() {
     const router = useRouter();
     const { asPath } = router;
-    if (asPath === "/user/login" || asPath === "/user/create") {
+    if (asPath === "/user/login") {
+      return <></>;
+    } else if (asPath === "/user/register") {
       return <></>;
     } else {
       return <Footer />;

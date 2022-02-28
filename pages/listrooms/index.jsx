@@ -53,6 +53,10 @@ function Listroom() {
     edit: false,
   };
 
+  function randomStart() {
+    return Math.floor(Math.random() * 5) + 2;
+  }
+
   return (
     <div className=" flex pl-8 container">
       {/* Section Left */}
@@ -81,7 +85,7 @@ function Listroom() {
                   </p>
                   <div className={styles.miniSeparator}></div>
                   <p className={styles.facilities}>{el.facilities}</p>
-                  <ReactStars {...mystar} value={el.value} />
+                  <ReactStars {...mystar} value={randomStart()} />
                   <div className="flex">
                     <p className=" text-4xl text-green-700">
                       <FaMoneyBillAlt />

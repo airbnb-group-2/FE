@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 import Image from "next/image";
 import Navbarlogo from "../assets/navbarLogo.png";
 import styles from "../styles/Navbar.module.css";
@@ -12,7 +13,27 @@ import { FiLogIn } from "react-icons/fi";
 import { useRouter } from "next/router";
 
 function Navbar() {
+  const Swal = require("sweetalert2");
   const router = useRouter();
+
+  function handleLogout() {
+    return Swal.fire({
+      title: "Are you sure?",
+      text: "You want to log out?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Thank you!", "See you next time:) Beta BnB", "success");
+        router.push("/");
+        localStorage.clear();
+      }
+    });
+  }
+
   function stateLogin() {
     if (typeof window !== "undefined") {
       // token = true
@@ -24,7 +45,7 @@ function Navbar() {
           <div
             className={`flex items-center mb-1 text-white text-2xl border-2 rounded-full p-2 hover: w-12 ${styles.loginDisplay2}`}
           >
-            <a href="">
+            <a>
               <FaUserCircle className=" ml-0.5 mt-0.5 hover:text-gray-800 transition duration-100" />
             </a>
 
@@ -41,7 +62,11 @@ function Navbar() {
             </p>
 
             {/* Log Out */}
-            <a href="/homepage" onClick={() => localStorage.clear()}>
+            <a
+              onClick={() => {
+                handleLogout();
+              }}
+            >
               <FiLogIn
                 className={` mt-0.5 hover:text-gray-800 transition duration-100 border-l-2 pl-1 hidden ${styles.textLogin}`}
               />
@@ -49,9 +74,7 @@ function Navbar() {
             <p
               className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover:text-gray-800 transition duration-100`}
             >
-              <a href="/homepage" onClick={() => localStorage.clear()}>
-                Log Out
-              </a>
+              <a onClick={() => handleLogout()}>Log Out</a>
             </p>
           </div>
         );
@@ -69,7 +92,7 @@ function Navbar() {
             </p>
 
             <a href="/user/login">
-              <FiLogIn className=" mt-0.5 mr-0.5 hover:text-gray-800  transition duration-100" />
+              <FaUserCircle className=" mt-0.5 mr-0.5 hover:text-gray-800  transition duration-100" />
             </a>
           </div>
         );
@@ -83,7 +106,7 @@ function Navbar() {
           <div
             className={`flex items-center mb-1 text-white text-2xl border-2 rounded-full p-2 hover: w-12 ${styles.loginDisplay2}`}
           >
-            <a href="">
+            <a>
               <FaUserCircle className=" ml-0.5 mt-0.5 hover:text-gray-800 transition duration-100" />
             </a>
 
@@ -100,7 +123,7 @@ function Navbar() {
             </p>
 
             {/* Log Out */}
-            <a href="/homepage" onClick={() => localStorage.clear()}>
+            <a onClick={() => handleLogout()}>
               <FiLogIn
                 className={` mt-0.5 hover:text-gray-800 transition duration-100 border-l-2 pl-1 hidden ${styles.textLogin}`}
               />
@@ -108,9 +131,7 @@ function Navbar() {
             <p
               className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover:text-gray-800 transition duration-100`}
             >
-              <a href="/homepage" onClick={() => localStorage.clear()}>
-                Log Out
-              </a>
+              <a onClick={() => handleLogout()}>Log Out</a>
             </p>
           </div>
         );
