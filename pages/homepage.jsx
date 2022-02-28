@@ -3,14 +3,12 @@ import Image from "next/image";
 import mainImg from "../assets/HOME.png";
 import CatImg from "../assets/cat.png";
 import Homecard from "../components/homecard"
-import Homearticle from "../components/homearticle"
-import NumberFormat from "react-number-format";
-import ReactLoading from "react-loading";
-
+import Article1 from "../assets/article.png"
+import Article2 from "../assets/Article2.png"
+import Article3 from "../assets/Article3.png"
 
 function Home() {
-
-
+    
  return(
     <section>
         <div className="grid grid-cols-1 max-h-[90vh] overflow-hidden">
@@ -42,16 +40,44 @@ function Home() {
                 </div>
             </div>
         </div>    
-        <div className="mt-[15vh] mb-[15vh] bg-[#F1E5D8]">
+        <div className="mt-[15vh] mb-[15vh] bg-[#f5f5f5]">
             <p className="mt-[3vh] mb-[3vh] ml-[10vh] mr-[10vh] text-4xl">
                 <text className="italic">Let see</text> event around the <text className="text-red-700"> world </text>
             </p>
             <div className="algint-right    mt-[5vw] ml-[5vw] mr-[5vw] grid grid-cols-2">
                 <div className="ml-[5vw] mr-[2vw] grid grid-cols-1">
-                    <Homearticle />
+                    {/*Article1 */}
+                    <div>
+                        <p className="text-xl bold ml-[5vh]">
+                           India color festival 
+                        </p>
+                        <div class=" bg-[#7F6F62] bg-opacity-50 ml-[30px] mr-[30px] max-w-sm max-h-[49vh]  overflow-hidden shadow-black shadow-sm hover:shadow-xl rounded-xl">
+                            <div onClick={() => window.open("https://www.youtube.com/watch?v=FqdmWQ-ACv0&t=0s")}>
+                                <Image className="w-full h-[51vh]" src={Article1} alt="Sunset in the mountains"/>
+                            </div>
+                        </div>
+                        <p className="text-lg italic mb-[50px] ml-[40vh]">
+                            click to read article
+                        </p>
+                    </div>
+                    {/*Article1 */}
                 </div>
                 <div className="ml-[5vw] mr-[2vw] grid grid-cols-1">
-                    <Homearticle/>
+                    {/*Article3 */}
+                    <div>
+                        <p className="text-xl bold ml-[5vh]">
+                           Event in Europe
+                        </p>
+                        <div class=" bg-[#7F6F62] bg-opacity-50 ml-[30px] mr-[30px] max-w-sm max-h-[49vh]  overflow-hidden shadow-black shadow-sm hover:shadow-xl rounded-xl">
+                            <div onClick={() => window.open("https://www.youtube.com/watch?v=FqdmWQ-ACv0&t=0s")}>
+                                <Image className="w-full h-[51vh]" src={Article2} alt="Sunset in the mountains"/>
+                            </div>
+                        </div>
+                        <p className="text-lg italic mb-[50px] ml-[40vh]">
+                            click to read article
+                        </p>
+                    </div>
+                    {/*Article3 */}
                 </div>
             </div>
         </div>  
@@ -61,7 +87,21 @@ function Home() {
                     <Image src={CatImg} alt="cat-image" className=""/>
                 </div>
                 <div className="ml-[5vw] mr-[2vw] grid grid-cols-1">
-                    <Homearticle />
+                    {/*Article2 */}
+                    <div>
+                        <p className="text-xl bold ml-[5vh]">
+                           Read our travel tips here!
+                        </p>
+                        <div class=" bg-[#7F6F62] bg-opacity-50 ml-[30px] mr-[30px] max-w-sm max-h-[49vh]  overflow-hidden shadow-black shadow-sm hover:shadow-xl rounded-xl">
+                            <div onClick={() => window.open("https://www.youtube.com/watch?v=FqdmWQ-ACv0&t=0s")}>
+                                <Image className="w-full h-[51vh]" src={Article3} alt="Sunset in the mountains"/>
+                            </div>
+                        </div>
+                        <p className="text-lg italic mb-[50px] ml-[40vh]">
+                            click to read article
+                        </p>
+                    </div>
+                    {/*Article2 */}
                 </div>
             </div>
         </div>  
