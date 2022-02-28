@@ -43,7 +43,7 @@ export default function ListRoom() {
         <div className={styles.overflow}>
           {listroom.map((el, i) => (
             <div
-              onClick={() => router.push(`/product-detail/${el.id}`)}
+              onClick={() => router.push(`/rooms/${el.id}`)}
               className=" mb-7"
               key={i}
             >
