@@ -33,7 +33,8 @@
 
 .loginDisplay {
   transition: 2s;
-  height: 42px;
+  height: 50px;
+  width: 50px;
 }
 .loginDisplay:hover {
   width: 120px;
@@ -45,7 +46,8 @@
 }
 
 .loginDisplay2 {
-  height: 42px;
+  height: 50px;
+  width: 50px;
   transition: 2s;
 }
 .loginDisplay2:hover {
@@ -54,4 +56,9 @@
 .loginDisplay2:hover .textLogin {
   transition: 2s;
   display: inline-block;
+}
+
+
+.loginDisplay2 p{
+  min-width: 130px;
 }

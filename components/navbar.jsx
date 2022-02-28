@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Swal from "sweetalert2";
 import Image from "next/image";
-import Navbarlogo from "../assets/navbarLogo.png";
+import Navbarlogo from "../assets/Logo-white.png";
 import styles from "../styles/Navbar.module.css";
 import {
   FaSearch,
@@ -9,12 +9,22 @@ import {
   FaListUl,
   FaRegPlusSquare,
 } from "react-icons/fa";
+import {AiOutlineLogin} from "react-icons/ai"
 import { FiLogIn } from "react-icons/fi";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import allStore from '../store/actions'
 
 function Navbar() {
+  const dispatch = useDispatch();
   const Swal = require("sweetalert2");
   const router = useRouter();
+
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      dispatch(allStore.getUserType());
+    }
+  },[dispatch])
 
   function handleLogout() {
     return Swal.fire({
@@ -46,17 +56,17 @@ function Navbar() {
             className={`flex items-center mb-1 text-white text-2xl border-2 rounded-full p-2 hover: w-12 ${styles.loginDisplay2}`}
           >
             <a>
-              <FaUserCircle className=" ml-0.5 mt-0.5 hover:text-gray-800 transition duration-100" />
+              <FaUserCircle className=" ml-0.5 mt-0.5 hover: transition duration-100" />
             </a>
 
             {/* Booking List */}
             <a href="/booking">
               <FaListUl
-                className={` mt-0.5 hover:text-gray-800 transition duration-100 ml-2 border-l-2 pl-1 hidden ${styles.textLogin}`}
+                className={` mt-0.5 hover: transition duration-100 ml-2 border-l-2 pl-1 hidden ${styles.textLogin}`}
               />
             </a>
             <p
-              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover:text-gray-800 transition duration-100`}
+              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover: transition duration-100`}
             >
               <a href="/booking">Booking List</a>
             </p>
@@ -68,11 +78,11 @@ function Navbar() {
               }}
             >
               <FiLogIn
-                className={` mt-0.5 hover:text-gray-800 transition duration-100 border-l-2 pl-1 hidden ${styles.textLogin}`}
+                className={` mt-0.5 hover: transition duration-100 border-l-2 pl-1 hidden ${styles.textLogin}`}
               />
             </a>
             <p
-              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover:text-gray-800 transition duration-100`}
+              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover: transition duration-100`}
             >
               <a onClick={() => handleLogout()}>Log Out</a>
             </p>
@@ -83,16 +93,16 @@ function Navbar() {
       if (!localStorage.getItem("token")) {
         return (
           <div
-            className={`flex  items-center mb-1 text-white text-2xl border-2 w-12 rounded-full p-2 ${styles.loginDisplay}`}
+            className={`flex justify-center items-center mb-1 text-white text-2xl border-2 w-12 rounded-full p-2 ${styles.loginDisplay}`}
           >
             <p
-              className={`${styles.textLogin} px-2 text-xl hidden hover:text-gray-800 transition duration-100`}
+              className={`${styles.textLogin} px-2 text-xl hidden hover: transition duration-100`}
             >
               <a href="/user/login">Login</a>
             </p>
 
             <a href="/user/login">
-              <FaUserCircle className=" mt-0.5 mr-0.5 hover:text-gray-800  transition duration-100" />
+              <AiOutlineLogin className="hover: transition duration-100" />
             </a>
           </div>
         );
@@ -107,17 +117,17 @@ function Navbar() {
             className={`flex items-center mb-1 text-white text-2xl border-2 rounded-full p-2 hover: w-12 ${styles.loginDisplay2}`}
           >
             <a>
-              <FaUserCircle className=" ml-0.5 mt-0.5 hover:text-gray-800 transition duration-100" />
+              <FaUserCircle className=" ml-0.5 mt-0.5 hover: transition duration-100" />
             </a>
 
             {/* Booking List */}
             <a href="#">
               <FaRegPlusSquare
-                className={` mt-0.5 hover:text-gray-800 transition duration-100 ml-2 border-l-2 pl-1 hidden ${styles.textLogin}`}
+                className={` mt-0.5 hover: transition duration-100 ml-2 border-l-2 pl-1 hidden ${styles.textLogin}`}
               />
             </a>
             <p
-              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover:text-gray-800 transition duration-100`}
+              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover: transition duration-100`}
             >
               <a href="#">Add Rooms</a>
             </p>
@@ -125,11 +135,11 @@ function Navbar() {
             {/* Log Out */}
             <a onClick={() => handleLogout()}>
               <FiLogIn
-                className={` mt-0.5 hover:text-gray-800 transition duration-100 border-l-2 pl-1 hidden ${styles.textLogin}`}
+                className={` mt-0.5 hover: transition duration-100 border-l-2 pl-1 hidden ${styles.textLogin}`}
               />
             </a>
             <p
-              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover:text-gray-800 transition duration-100`}
+              className={`${styles.textLogin} px-2 mt-1 text-xl hidden hover: transition duration-100`}
             >
               <a onClick={() => handleLogout()}>Log Out</a>
             </p>
