@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import mainImg from "../assets/detail.png";
-import style from "../styles/productdetail.module.css";
+import mainImg from "../../assets/detail.png";
+import style from "../../styles/productdetail.module.css";
 import { useRouter } from "next/router";
 import ReactStars from "react-rating-stars-component";
 import DatePicker from "react-datepicker";
-import 'react-datepicker/dist/react-datepicker.css';
+import 'react-datepicker/dist/react-datepicker.css'
 
 function product() {
 
@@ -34,22 +34,22 @@ function product() {
 
 
     return(
-        <div className={'flex justify-center '+ style.background}>
-            <div className='h-4/5'>
+        <div className={'flex justify-center z-0 '+ style.background}>
+            <div className={''+ style.gambar}>
                 <Image 
                 src={mainImg}
-                alt='payment background'
+                alt='room background'
                 layout='fill'
                 objectFit='cover'
                 objectPosition='bottom'
-                className=" z-0"
+                className="h-fit"
                 />
             </div>
-            <div className={style.content + " z-1 w-[60vw] h-[100vh] py-5 flex flex-col justify-between items-center "}>
+            <div className={style.content + " z-1 w-[60vw] h-[88.5vh] py-5 flex flex-col justify-between items-center "}>
                 <h2 className="text-3xl bold text-black mt-[-2vh] mb-[2vh]">
                     {data[0].name}
                 </h2>
-                <div className={'drop-shadow hover:shadow-lg '+style.form}>
+                <div className={'drop-shadow hover:shadow-lg mt-[-1.5vh] '+style.form}>
                     <div className="ml-[20vh] grid grid-cols-2 px-2 justify-center ">
                         <div clasName="grid grid-cols-1 px-2 padding">
                             <img
@@ -84,45 +84,33 @@ function product() {
                         </div>
                     </div>
                 </div>
-                <div className={'mt-[1vh] max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
+                <div className={'mt-[0.5vh] max-w-[90vh] max-h-[15vh] drop-shadow hover:shadow-lg '+style.form}>
                     {/* check in date*/}
-                    <div className="grid grid-cols-2 px-5">
+                    <div className="grid grid-cols-2 px-1">
                         <div className="grid grid-cols-1 mr-[2vh] bg-blue-500">
-                            <p className="text-lg bold text-black">
+                            <p className=" text-lg bold text-black">
                                 Check-in Date
                             </p>
-                            <DatePicker className="border-black" selected={checkIn} onChange={(date) => setcheckIn(date)} />
+                            <DatePicker className="border-black z-10" selected={checkIn} onChange={(date) => setcheckIn(date)} />
                         </div>
                         <div className=" grid grid-cols-1 ml-[2vh] bg-red-500">
                             <p className="text-lg bold text-black">
                                 Check-out Date
                             </p>
-                            <DatePicker selected={checkOut} onChange={(date) => setcheckOut(date)} />
+                            <DatePicker className="border-black z-10" selected={checkOut} onChange={(date) => setcheckOut(date)} />
                         </div>
                     </div>
                     {/* check in date end*/}
-                    
-                    <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-                        <ul class="py-1" aria-labelledby="dropdownButton">
-                            <li>
-                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                   isi
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    {/* check out date end*/}
-                    <div className="mt-2" >
-                        <p className="text-lg"> Rp. subtotal</p>
-                    </div>
                 </div>
-                <div className={'mt-[1vh] max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
-                        <button className='rounded-lg hover:bg-gray-400 hover:text-black '>
-                            Reserve Now
-                        </button>
-                </div>
-                <div>
-                    <h3>© 2022 Beta BnB, Inc. All rights reserved</h3>
+                <div className={'z-0 mt-[0.5vh] w-[vh] h-[15vh] drop-shadow hover:shadow-lg '+style.form}>
+                    <div className="mt-[-2vh]" >
+                        <p className="text-lg bold">
+                            Rp. subtotal
+                        </p>
+                    </div>
+                    <button className='z-1 rounded-lg hover:bg-gray-400 hover:text-black text-sm' onClick={() => router.push('/payment')} >
+                        Reserve Now
+                    </button>
                 </div>
             </div>
         </div>
