@@ -1,4 +1,6 @@
 import axios from "axios";
+import Router, { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 export const submitRegister = (input) =>{
     return() => {
@@ -30,6 +32,23 @@ export const submitLogin = (input) =>{
                     const data = response.data.message
                     reject(data)
                 })
+        })
+    }
+}
+
+export const getUserType = () =>{
+    return(dispatch) =>{
+        console.log("Bearer ");
+        let token = "Bearer "+ localStorage.getItem('token');
+        return new Promise ((resolve, reject) =>{
+            axios
+            .get("http://3.1.211.120:8081/users/jwt",{headers : {'Authorization':token }})
+            .then(({data})=>{
+                localStorage.setItem('is_renter', data.data.is_renter);
+            })
+            .catch((err)=>{
+                Swal.fire("Somethings Off.. ", "We wil Fix It, Please Continue..", "info");
+            })
         })
     }
 }
