@@ -45,7 +45,7 @@ function product() {
                 <h2 className="mb-[1vh] object-left-top text-3xl bold text-black">
                     Payment
                 </h2>
-                <div className={' drop-shadow '+style.form}>
+                <div className={' drop-shadow hover:shadow-lg  '+style.form}>
                     {/* DROPDOWN SECTION */}
                     <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                         Select payment method
@@ -75,7 +75,7 @@ function product() {
                     </form>
                     {/*DROPDOWN SECTION END */}
                 </div>
-                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow '+style.form}>
+                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg  '+style.form}>
                     {/* show product */}
                         {data.map((el, i) => (
                         <div
@@ -109,7 +109,7 @@ function product() {
                                         check in date - check out date
                                     </div>
                                     <div className=''>
-                                        <button className='ml-[28vh]  rounded-lg'>Checkout</button>
+                                        <button className='ml-[28vh]  rounded-lg hover:bg-gray-500'>Checkout</button>
                                     </div>
                                 </div>
                             </div>

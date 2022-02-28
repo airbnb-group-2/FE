@@ -45,7 +45,7 @@ function product() {
                 <h2 className="object-left-top text-3xl bold text-black">
                     Room detail & Reservation
                 </h2>
-                <div className={'max-w-[90vh] max-h-[37.5vh] drop-shadow '+style.form}>
+                <div className={'max-w-[90vh] max-h-[37.5vh] drop-shadow hover:shadow-lg '+style.form}>
                     {/* show product */}
                     {data.map((el, i) => (
                     <div
@@ -81,7 +81,7 @@ function product() {
                     ))}  
                     {/*show product end*/}
                 </div>
-                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow '+style.form}>
+                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
                     {/* DROPDOWN SECTION */}
                     {/* check in date*/}
                     <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -102,7 +102,7 @@ function product() {
                     </div>
                     {/* check in date end*/}
                     {/* check out date*/}
-                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="ml-[3vh] text-whiteg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="ml-[3vh] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                         Check-out Date
                         <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
@@ -119,9 +119,12 @@ function product() {
                         </ul>
                     </div>
                     {/* check out date end*/}
+                    <div className="mt-2" >
+                        <p className="ml-2 text-lg"> Rp. subtotal</p>
+                    </div>
                 </div>
-                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow '+style.form}>
-                        <button className='rounded-lg'>
+                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
+                        <button className='rounded-lg hover:bg-gray-400 hover:text-black '>
                             Check Availability
                         </button>
                 </div>
