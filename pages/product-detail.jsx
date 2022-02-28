@@ -4,7 +4,8 @@ import mainImg from "../assets/detail.png";
 import style from "../styles/productdetail.module.css";
 import { useRouter } from "next/router";
 import ReactStars from "react-rating-stars-component";
-import { FaMoneyBillAlt } from "react-icons/fa";
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
 function product() {
 
@@ -28,9 +29,12 @@ function product() {
       edit: false,
     };
 
+    const [checkIn, setcheckIn] = useState(new Date());
+    const [checkOut, setcheckOut] = useState(new Date());
+
 
     return(
-        <div className={'mx-[3vh] flex justify-end '+ style.background}>
+        <div className={'flex justify-center '+ style.background}>
             <div className='h-4/5'>
                 <Image 
                 src={mainImg}
@@ -41,74 +45,63 @@ function product() {
                 className=" z-0"
                 />
             </div>
-            <div className={style.content + " z-1 w-[50vw] h-[100vh] py-10 flex flex-col justify-between items-center "}>
-                <h2 className="object-left-top text-3xl bold text-black">
-                    Room detail & Reservation
+            <div className={style.content + " z-1 w-[60vw] h-[100vh] py-5 flex flex-col justify-between items-center "}>
+                <h2 className="text-3xl bold text-black mt-[-2vh] mb-[2vh]">
+                    {data[0].name}
                 </h2>
-                <div className={'max-w-[90vh] max-h-[37.5vh] drop-shadow hover:shadow-lg '+style.form}>
-                    {/* show product */}
-                    {data.map((el, i) => (
-                    <div
-                        onClick={() => router.push(`/detail/${el.id}`)}
-                        className=" mb-7"
-                        key={i}
-                        >
-                        <div className="mt-[-3vh] flex">
-                            <div className=" w-1/2">
+                <div className={'drop-shadow hover:shadow-lg '+style.form}>
+                    <div className="ml-[20vh] grid grid-cols-2 px-2 justify-center ">
+                        <div clasName="grid grid-cols-1 px-2 padding">
                             <img
-                                className={` ml-[-5vh] mt-[3vh] rounded-xl drop-shadow-xl ${style.imageCard}`}
-                                src={el.img}
+                                className={`ml-[-20vh] px-[0.5vh] drop-shadow-xl max-h-[34vh] max-w-[50vh] ${style.imageCard}`}
+                                src={data[0].img}
                             />
-                            </div>
-                            <div className=" w-1/2">
-                            <p className=" cursor-pointer text-xl font-bold mt-4">
-                                {el.name}
-                            </p>
-                            <div className={style.miniSeparator}></div>
-                                <p className={style.facilities+'text-xs' }>
-                                    {el.facilities}
-                                </p>
-                                <ReactStars {...mystar} value={el.value} />
-                                <div className="flex">
-                                    <p className=" text-2xl text-green-700">
-                                    <FaMoneyBillAlt />
-                                    </p>
-                                    <p className="ml-2 text-lg"> Rp. {el.price}</p>
-                                </div>
-                            </div>
+                        </div>
+                        <div clasName="grid grid-cols-2 max-w-[30vh]">
+                            <img
+                                className={`py-[0.2vh] drop-shadow-xl max-w-[30vh] max-h-[15vh] ${style.imageCard}`}
+                                src={data[0].img}
+                            />
+                            <img
+                                className={`py-[0.2vh] drop-shadow-xl max-w-[30vh] max-h-[15vh] ${style.imageCard}`}
+                                src={data[0].img}
+                            />
                         </div>
                     </div>
-                    ))}  
-                    {/*show product end*/}
+                    <div className="grid grid-cols-2 px-2 mr-[1vh] ml-[1vh] ">
+                        <div clasName="grid grid-cols-1 px-2 padding mt-[2vh]">
+                            <div className="flex">
+                                <ReactStars {...mystar} value={data[0].value} />
+                            </div>
+                            <div className>
+                                <p className="ml-[-19vh] bold text-2xl"> Rp. {data[0].price}</p>
+                            </div>
+                        </div>
+                        <div clasName="grid grid-cols-2 ">
+                            <p className={style.facilities+'justify-center text-s max-w-[35vh] mt-[2vh]' }>
+                                {data[0].facilities}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
-                    {/* DROPDOWN SECTION */}
+                <div className={'mt-[1vh] max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
                     {/* check in date*/}
-                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                        Check-in Date
-                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-                        <ul class="py-1" aria-labelledby="dropdownButton">
-                            <li>
-                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                    isi 
-                                </a>
-                            </li>
-                        </ul>
+                    <div className="grid grid-cols-2 px-5">
+                        <div className="grid grid-cols-1 mr-[2vh] bg-blue-500">
+                            <p className="text-lg bold text-black">
+                                Check-in Date
+                            </p>
+                            <DatePicker className="border-black" selected={checkIn} onChange={(date) => setcheckIn(date)} />
+                        </div>
+                        <div className=" grid grid-cols-1 ml-[2vh] bg-red-500">
+                            <p className="text-lg bold text-black">
+                                Check-out Date
+                            </p>
+                            <DatePicker selected={checkOut} onChange={(date) => setcheckOut(date)} />
+                        </div>
                     </div>
                     {/* check in date end*/}
-                    {/* check out date*/}
-                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="ml-[3vh] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                        Check-out Date
-                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
+                    
                     <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
                         <ul class="py-1" aria-labelledby="dropdownButton">
                             <li>
@@ -120,12 +113,12 @@ function product() {
                     </div>
                     {/* check out date end*/}
                     <div className="mt-2" >
-                        <p className="ml-2 text-lg"> Rp. subtotal</p>
+                        <p className="text-lg"> Rp. subtotal</p>
                     </div>
                 </div>
-                <div className={'max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
+                <div className={'mt-[1vh] max-w-[90vh] max-h-[44vh] drop-shadow hover:shadow-lg '+style.form}>
                         <button className='rounded-lg hover:bg-gray-400 hover:text-black '>
-                            Check Availability
+                            Reserve Now
                         </button>
                 </div>
                 <div>
