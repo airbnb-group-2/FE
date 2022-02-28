@@ -1,5 +1,4 @@
 import axios from "axios";
-import Router, { useRouter } from "next/router";
 import Swal from "sweetalert2";
 
 export const submitRegister = (input) =>{

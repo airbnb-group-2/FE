@@ -1,8 +1,18 @@
 import Navbar from "./navbar";
 import { useRouter } from "next/router";
 import Footer from "./footer";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import allStore from "../store/actions";
 
 export default function Layout({ children }) {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(allStore.getListRooms());
+  },[dispatch]);
+
   function ReturnNavbar() {
     const router = useRouter();
     const { asPath } = router;
