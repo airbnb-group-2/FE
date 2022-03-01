@@ -11,7 +11,7 @@ import axios from "axios";
 function product() {
 
     const router = useRouter();
-    let id=router.query.id
+    let {id}=router.query
     console.log(router.query.id)
 
     useEffect(() => {
