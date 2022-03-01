@@ -1,0 +1,64 @@
+.bgNav {
+  background-color: #29738f;
+}
+.navLogo {
+  position: relative;
+  height: 60px;
+  width: 190px;
+}
+.input {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #29738f;
+  border: white 2px solid;
+  border-radius: 100vw;
+  margin: 0px auto;
+  margin-bottom: 0.5rem;
+  max-width: 350px;
+}
+.inputSearch {
+  width: 280px;
+  margin-left: 10px;
+  background-color: #29738f;
+}
+.inputSearch:focus {
+  width: 280px;
+  margin-left: 10px;
+  background-color: #29738f;
+  outline: none;
+  color: white;
+}
+
+.loginDisplay {
+  transition: 2s;
+  height: 50px;
+  width: 50px;
+}
+.loginDisplay:hover {
+  width: 120px;
+}
+.loginDisplay:hover .textLogin {
+  transition: 2s;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.loginDisplay2 {
+  height: 50px;
+  width: 50px;
+  transition: 2s;
+}
+.loginDisplay2:hover {
+  width: 320px;
+}
+.loginDisplay2:hover .textLogin {
+  transition: 2s;
+  display: inline-block;
+}
+
+
+.loginDisplay2 p{
+  min-width: 130px;
+}

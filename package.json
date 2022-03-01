@@ -9,14 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.2",
     "axios": "^0.26.0",
-    "next": "12.1.0",
+    "google-map-react": "^2.1.10",
+    "google-maps-react": "^2.0.6",
+    "moment": "^2.29.1",
+    "next": "^12.1.0",
     "react": "17.0.2",
+    "react-datepicker": "^4.7.0",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-loading": "^2.0.3",
+    "react-number-format": "^4.9.1",
+    "react-onclickoutside": "^6.12.1",
+    "react-popper": "^2.2.5",
+    "react-rating-stars-component": "^2.2.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "sweetalert2": "^11.4.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
@@ -24,5 +35,18 @@
     "eslint-config-next": "12.1.0",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.23"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airbnb-group-2/FE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airbnb-group-2/FE/issues"
+  },
+  "homepage": "https://github.com/airbnb-group-2/FE#readme"
 }
