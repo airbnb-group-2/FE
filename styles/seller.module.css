@@ -1,0 +1,87 @@
+.container{
+    margin: 1rem 5%;
+    border: #B1D0E0 2px solid;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.container h1{
+    color: white;
+    -webkit-text-stroke: 1px #29738F ;
+
+}
+
+.tabs{
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    background-color: #29738F; 
+    color: #fff; 
+    overflow: hidden;
+}
+
+.tabs >*{
+    border-radius: 0.5rem;
+}
+
+.tabs h4{
+    margin: 5px 0px;
+    width: 400px;
+    padding: 5px 10px;
+}
+
+.tabs h4:hover{
+    border: #fff solid 2px;
+}
+
+
+.tabs svg{
+    margin-right: 10px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+.tabs .active{
+    background-color: #fff;
+    color: #29738F;
+}
+
+.content {
+    border: #29738F solid 1px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.summ{
+    font-size: 1.2rem;
+    color: #29738F;
+    margin: 1rem 0px;
+}
+
+.summ b{
+    font-size: 1.7rem;
+}
+
+.card{
+    border: 1px #29738F solid;
+    color: #29738F;
+    cursor: pointer;
+}
+
+.cardimg{
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card svg{
+    display: inline-block;
+    font-size: 3rem;
+    transform: rotate(45deg);
+}
+
+.inner{
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='%2329738FFF' stroke-width='4' stroke-dasharray='50%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+border-radius: 5px;
+}
+
+

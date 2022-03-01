@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/Booking.module.css";
-import { FaCalendarAlt, FaCalendarMinus, FaMoneyBillAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaCalendarMinus, FaUserCircle } from "react-icons/fa";
+import axios from "axios";
+import moment from "moment";
 
 function Booking() {
   const data = [
@@ -48,6 +50,23 @@ function Booking() {
     },
   ];
 
+  const [histories, setHistories] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    axios
+      .get("http://3.1.211.120:8081/books/user-books", config)
+      .then(({ data }) => {
+        setHistories(data.data);
+      })
+      .catch((err) => {
+        console.log(err, "error bang");
+      });
+  }, []);
+
   return (
     <div className=" flex pl-8 container">
       {/* Section Left */}
@@ -56,40 +75,50 @@ function Booking() {
 
         {/* Card */}
         <div className={styles.overflow}>
-          {data.map((el, i) => (
-            <div
-              //   onClick={() => router.push(`/detail/${el.id}`)}
-              className=" mb-7"
-              key={i}
-            >
+          {histories.map((el, i) => (
+            <div className=" mb-7" key={i}>
               <div className={styles.separator}></div>
               <div className=" flex">
-                <div className=" w-1/2">
-                  <img
-                    className={` rounded-xl drop-shadow-xl ${styles.imageCard}`}
-                    src={el.img}
-                  />
-                </div>
-                <div className=" w-1/2">
-                  <p className=" cursor-pointer text-2xl font-bold p-0">
-                    {el.name}
+                <div className="">
+                  <p className=" cursor-pointer text-xl font-bold p-0">
+                    {el.room_name}
                   </p>
                   <div className={styles.miniSeparator}></div>
-                  <p className=" font-semibold">Check in :</p>
-                  <div className=" flex text-gray-600 mt-1 items-center">
-                    <FaCalendarAlt /> <p className="ml-2">{el.checkin}</p>
-                  </div>
-                  <p className=" font-semibold mt-1">Check out :</p>
-                  <div className=" flex text-gray-600 mt-1 items-center">
-                    <FaCalendarMinus /> <p className="ml-2">{el.checkout}</p>
-                  </div>
-
-                  <p className=" font-semibold mt-1">Total price :</p>
-                  <div className=" flex text-gray-600 mt-1 items-center">
-                    <span className=" text-green-700 text-2xl">
-                      <FaMoneyBillAlt />{" "}
-                    </span>
-                    <p className="ml-2">Rp. {el.price}</p>
+                  <div className="flex w-[720px]">
+                    {/* in */}
+                    <div className=" w-1/3">
+                      <p className=" font-semibold">Check in</p>
+                      <div className=" flex text-gray-600 mt-1 items-center">
+                        <FaCalendarAlt />{" "}
+                        <p className="ml-2">
+                          {moment(el.check_in_reserved).format(
+                            "ddd, Do MMM YYYY"
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                    {/* out */}
+                    <div className=" w-1/3">
+                      <p className=" font-semibold mt-1">Check out</p>
+                      <div className=" flex text-gray-600 mt-1 items-center">
+                        <FaCalendarMinus />{" "}
+                        <p className="ml-2">
+                          {moment(el.check_out_reserved).format(
+                            "ddd, Do MMM YYYY"
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                    {/* status */}
+                    <div className=" w-1/3">
+                      <p className=" font-semibold mt-1">Status</p>
+                      <div className=" flex text-gray-600 mt-1 items-center">
+                        <span className=" text-gray-600">
+                          <FaUserCircle />{" "}
+                        </span>
+                        <p className="ml-2">{el.status}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

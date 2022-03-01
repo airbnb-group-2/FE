@@ -9,8 +9,7 @@ import NumberFormat from "react-number-format";
 
 export default function ListRoom() {
   const router = useRouter();
-  const facilities =
-    "2 Guest - 1 Bedroom - 1 Bed 1 Bathroom - Wifi - AC - Kitchen - Free Parking";
+
   const [listroom, setListroom] = useState([]);
   const mystar = {
     size: 30,
@@ -44,7 +43,7 @@ export default function ListRoom() {
         <div className={styles.overflow}>
           {listroom.map((el, i) => (
             <div
-              onClick={() => router.push(`/product-detail/${el.id}`)}
+              onClick={() => router.push(`/rooms/${el.id}`)}
               className=" mb-7"
               key={i}
             >
