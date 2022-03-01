@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Beta BnB
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- Description -->
+<div align="center">
+  <a href="">
+    <img src="assets/Logo.png" alt="Logo" width="200" height="200">
+  </a>
+</div>
+<br/>
+<div>
+  <!-- <h3 align="center">Restobook</h3> -->
+  <p align="center">
+    Online Hotel Rooms Booking<br/><br/>
+    Pada saat ini, kemajuan teknologi mempermudah manusia untuk melakukan berbagai aktivitas sehari-hari. Salah satu hal yang dibutuhka manusia dalam menjalani kehidupannya adalah liburan.Dengan aplikasi ini akan memudahkan siapapun mendapatkan tempat menginap saat liburan dengan praktis dan efisien.
+    <br/>
+</div>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+# Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Framework
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- React Next Js + Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Package
+ - [axios]( https://www.npmjs.com/package/axios )
+ - [google-map-react]( https://www.npmjs.com/package/google-map-react )
+ - [moment]( https://momentjs.com/ )
+ - [react-datepicker]( https://reactdatepicker.com/ )
+ - [react-icons]( https://react-icons.github.io/react-icons/ )
+ - [react-number-format]( https://www.npmjs.com/package/react-number-format )
+ - [react-onclickoutside]()
+ - [react-popper]( https://popper.js.org/react-popper/ )
+ - react-rating-stars
+ - [React-redux]( https://react-redux.js.org/ )
+ - [sweetalert2]( https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html )
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Collaboration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Trello (Manage projects)](https://trello.com)
+- [Github (Cloud-based Git repository)](https://github.com)
+- [Figma (Manage design)]
+
+
+# Contact
+
+- [Andrew Prasetyo] [FE] (https://github.com/RizkiAwenkCode) (Ketua Group)
+- [Muhammad Yusuf U W] [FE] (https://github.com/myusufuntung)
+- [Aditya Fabio H] [FE] (https://github.com/fabioaditya)
+- [Yusuf Nur Wahid] [BE] (https://github.com/ynwahid)
+GitHub
+RizkiAwenkCode - Overview
+RizkiAwenkCode has 2 repositories available. Follow their code on GitHub.
