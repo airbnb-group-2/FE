@@ -15,16 +15,20 @@ function product() {
     console.log(router.query.id)
 
     useEffect(() => {
+        if(id!=='udefined'){
+            console.log('running use effect')
         axios
-          .get(`http://3.1.211.120:8081/rooms/${id}`)
-          .then(({ data }) => {
-          setRoom(data.data)
-          console.log(data.data)
-          })
-          .catch((err) => {
-            console.log(err, "error bang");
-          });
-      }, []);
+            .get(`http://3.1.211.120:8081/rooms/${id}`)
+            .then(({ data }) => {
+                setRoom(data.data)
+                console.log(data.data,'room berhasil')
+            })
+            .catch((err) => {
+                console.log(err, "error bang");
+            });
+        }
+      }, [id]);
+
 
     const [room, setRoom] = useState([]);
     console.log(room)
@@ -66,7 +70,7 @@ function product() {
             </div>
             <div className={style.content + " z-1 w-[60vw] h-[88.5vh] py-5 flex flex-col justify-between items-center "}>
                 <h2 className="text-3xl bold text-black mt-[-2vh] mb-[2vh]">
-                    {data[0].name}
+                    {el.name}
                 </h2>
                 <div className={'drop-shadow hover:shadow-lg mt-[-1.5vh] '+style.form}>
                     <div className="ml-[20vh] grid grid-cols-2 px-2 justify-center ">
