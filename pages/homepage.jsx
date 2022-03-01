@@ -78,7 +78,7 @@ const mystar = {
             <div className="mt-[5vw] ml-[5vw] mr-[5vw] grid grid-cols-4">
             {/* HOME CARD 1 */}
                 <div className="ml-[2vw] mr-[2vw] grid grid-cols-1"
-                onClick={()=>router.push('/listrooms') }>
+                onClick={()=>router.push(`/rooms/1`) }>
                     <div className={'shadow-black shadow-sm hover:shadow-xl '+style.form}>
                         <div className="ml-[-8.3vh] grid grid-cols-1 ">
                             <img
@@ -115,7 +115,7 @@ const mystar = {
             {/* HOME CARD 1 end*/}
             {/* HOME CARD 2 */}
                 <div className="ml-[2vw] mr-[2vw] grid grid-cols-1"
-                onClick={()=>router.push('/listrooms') }>
+                onClick={()=>router.push(`/rooms/0`) }>
                     <div className={'shadow-black shadow-sm hover:shadow-xl '+style.form}>
                         <div className="ml-[-8.3vh] grid grid-cols-1 ">
                             <img
@@ -152,7 +152,7 @@ const mystar = {
             {/* HOME CARD 2 end*/}
             {/* HOME CARD 3 */}
                 <div className="ml-[2vw] mr-[2vw] grid grid-cols-1"
-                onClick={()=>router.push('/listrooms') }>
+                onClick={()=>router.push(`/rooms/2`) }>
                     <div className={'shadow-black shadow-sm hover:shadow-xl '+style.form}>
                         <div className="ml-[-8.3vh] grid grid-cols-1 ">
                             <img
@@ -189,7 +189,7 @@ const mystar = {
             {/* HOME CARD 3 end*/}
             {/* HOME CARD 4*/}
                 <div className="ml-[2vw] mr-[2vw] grid grid-cols-1"
-                onClick={()=>router.push('/listrooms') }>
+                onClick={()=>router.push(`/rooms/3`) }>
                         <div className={'shadow-black shadow-sm hover:shadow-xl '+style.form}>
                             <div className="ml-[-8.3vh] grid grid-cols-1 ">
                                 <img
