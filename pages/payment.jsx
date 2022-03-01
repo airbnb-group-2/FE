@@ -41,11 +41,11 @@ function product() {
                 />
             </div>
             {/* buble payment method */}
-            <div className={style.content + " z-1 w-[50vw] h-[100vh] py-5 flex flex-col justify-between items-center "}>
-                <h2 className="mb-[1vh] object-left-top text-3xl bold text-black">
+            <div className={style.content + " z-1 w-[50vw] h-[88.5vh] py-5 flex flex-col justify-between items-center "}>
+                <h2 className="mb-[1.5vh] mt-[-15px] object-left-top text-3xl bold text-black">
                     Payment
                 </h2>
-                <div className={' drop-shadow hover:shadow-lg  '+style.form}>
+                <div className={'mt-[-2vh] drop-shadow hover:shadow-lg  '+style.form}>
                     {/* DROPDOWN SECTION */}
                     <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                         Select payment method
@@ -54,7 +54,7 @@ function product() {
                             </path>
                         </svg>
                     </button>
-                    <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+                    <div id="dropdown" class="hidden ml-[40px] z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
                         <ul class="py-1" aria-labelledby="dropdownButton">
                             <li>
                                 <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
