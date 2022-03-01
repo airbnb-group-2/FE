@@ -3,12 +3,12 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { useEffect } from "react";
+import Homepage from "./homepage.jsx"
 
 export default function Home() {
   return (
     <div>
-      <h1 className="text-blue-700"> Semangat Gan !</h1>
+      <Homepage />
     </div>
   );
 }
