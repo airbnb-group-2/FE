@@ -15,7 +15,7 @@ function product() {
     console.log(router.query.id)
 
     useEffect(() => {
-        if(id!=='udefined'){
+        if(id!=='undefined'){
             console.log('running use effect')
         axios
             .get(`http://3.1.211.120:8081/rooms/${id}`)
@@ -30,7 +30,22 @@ function product() {
       }, [id]);
 
 
-    const [room, setRoom] = useState([]);
+    const [room, setRoom] = useState({
+        'bedroom': 0
+        ,'city': ""
+        ,'description': ""
+        ,'guest': 0
+        ,'has_ac': true
+        ,'has_fp': true
+        ,'has_kitchen': true
+        ,'has_wifi': true
+        ,'id': 0
+        ,'latitude': ""
+        ,'longitude': ""
+        ,'name': ""
+        ,'price': 0
+        ,'user_id': 0
+    });
     console.log(room)
     
    
@@ -70,24 +85,24 @@ function product() {
             </div>
             <div className={style.content + " z-1 w-[60vw] h-[88.5vh] py-5 flex flex-col justify-between items-center "}>
                 <h2 className="text-3xl bold text-black mt-[-2vh] mb-[2vh]">
-                    {el.name}
+                    {room.name}
                 </h2>
                 <div className={'drop-shadow hover:shadow-lg mt-[-1.5vh] '+style.form}>
                     <div className="ml-[20vh] grid grid-cols-2 px-2 justify-center ">
                         <div clasName="grid grid-cols-1 px-2 padding">
                             <img
                                 className={`ml-[-20vh] px-[0.5vh] drop-shadow-xl max-h-[34vh] max-w-[50vh] ${style.imageCard}`}
-                                src={data[0].img}
+                                src={room.description}
                             />
                         </div>
                         <div clasName="grid grid-cols-2 max-w-[30vh]">
                             <img
                                 className={`py-[0.2vh] drop-shadow-xl max-w-[30vh] max-h-[15vh] ${style.imageCard}`}
-                                src={data[0].img}
+                                src={room.description}
                             />
                             <img
                                 className={`py-[0.2vh] drop-shadow-xl max-w-[30vh] max-h-[15vh] ${style.imageCard}`}
-                                src={data[0].img}
+                                src={room.description}
                             />
                         </div>
                     </div>
@@ -97,7 +112,7 @@ function product() {
                                 <ReactStars {...mystar} value={data[0].value} />
                             </div>
                             <div className>
-                                <p className="ml-[-19vh] bold text-2xl"> Rp. {data[0].price}</p>
+                                <p className="ml-[-19vh] bold text-2xl"> Rp. {room.price}</p>
                             </div>
                         </div>
                         <div clasName="grid grid-cols-2 ">
@@ -128,7 +143,7 @@ function product() {
                 <div className={'z-0 mt-[0.5vh] w-[vh] h-[15vh] drop-shadow hover:shadow-lg '+style.form}>
                     <div className="mt-[-2vh]" >
                         <p className="text-lg bold">
-                            Rp. subtotal
+                            Rp.{room.price}
                         </p>
                     </div>
                     <button className='z-1 rounded-lg hover:bg-gray-400 hover:text-black text-sm' onClick={() => router.push('/payment')} >
