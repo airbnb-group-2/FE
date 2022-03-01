@@ -63,7 +63,7 @@ const mystar = {
         <div className="grid grid-cols-1 max-h-[90vh] overflow-hidden">
             <Image src={mainImg} alt="home-image" className="relative"/>
             <div className="grid grid-co-3">
-                <button className="absolute left-[9.5vw] top-[29vw] h-[5vw] w-[29vw] bg-[#7F6F62] hover:bg-white  text-white font-semibold hover:text-black py-2 px-4 border border-black hover:border-[#7F6F62] rounded-xl"
+                <button className="absolute left-[9.5vw] top-[36vw] h-[5vw] w-[29vw] bg-[#7F6F62] hover:bg-white  text-white font-semibold hover:text-black py-2 px-4 border border-black hover:border-[#7F6F62] rounded-xl"
                     onClick={()=>router.push('/listrooms') }>
                     <p className="italic text-md">
                         BOOK A ROOM NOW
