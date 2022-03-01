@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import mainImg from "../../assets/detail.png";
 import style from "../../styles/productdetail.module.css";
@@ -6,10 +6,30 @@ import { useRouter } from "next/router";
 import ReactStars from "react-rating-stars-component";
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
+import axios from "axios";
 
 function product() {
 
     const router = useRouter();
+    let id=router.query.id
+    console.log(router.query.id)
+
+    useEffect(() => {
+        axios
+          .get(`http://3.1.211.120:8081/rooms/${id}`)
+          .then(({ data }) => {
+          setRoom(data.data)
+          console.log(data.data)
+          })
+          .catch((err) => {
+            console.log(err, "error bang");
+          });
+      }, []);
+
+    const [room, setRoom] = useState([]);
+    console.log(room)
+    
+   
     const data = [
         {
         name: "Deluxe Room Joglo",
@@ -21,7 +41,6 @@ function product() {
         img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         },
     ];
-    console.log(data);
   
     const mystar = {
       size: 30,
